@@ -101,6 +101,32 @@ body {
     }
 }
 
+@media (max-width:1120px){
+    .super-header{
+        flex-direction: column;
+        padding: 15px 30pxpx;
+        gap: 30px;
+    }
+    .logo{
+        justify-content: center;
+    }
+    .menu{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .menu-item{
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    .logo-emoji{
+        font-size: 40px;
+    }
+    .logo-text{
+        font-size: 40px;
+    }
+}
+
 .hero {
     min-height: 500px;
     padding: 60px 20px;
@@ -192,6 +218,30 @@ to {
         margin-bottom: 15px;
     }
 }
+
+@media (max-width:1120px){
+    .hero{
+        min-height: 300px;
+        padding: 30px 15px;
+        text-align: center;
+    }
+    .hero-content{
+        max-width: 100%;
+    }
+    .hero-title{
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    .name-animation{
+        display: block;
+        font-size: 30px;
+    }
+    .hero-text{
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+}
+
 
 .pokemon-container{
     display: flex;
@@ -460,6 +510,24 @@ to {
     }
 }
 
+@media (max-width:1120px){
+    .pokemon-container{
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 30px 15px;
+    }
+    .pokemon-card{
+        width: 100%;
+        max-width: 320px;
+        margin: 0 50px;
+    }
+    .pokemon-text{
+        font-size: 20px;
+        margin: 15px 10px;
+    }
+}
+
 .link-item{
     background-color: white;
     color: #333;
@@ -517,6 +585,53 @@ to {
     .footer-content {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
+    }
+    
+    .pokemon-heading {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .heading-emoji {
+        font-size: 25px;
+    }
+    
+    .link-item {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .link-emoji {
+        padding: 8px 12px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .footer-bottom {
+        margin-top: 15px;
+    }
+    
+    .footer-phargraf {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width:1120px){
+    .super-footer {
+        padding: 20px 10px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
         gap: 15px;
     }
     
