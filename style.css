@@ -553,6 +553,10 @@ to {
     margin-right: 10px;
 }
 
+.div-emoji{
+    margin: 10px 10px;
+}
+
 .link-emoji{
     background-color: white;
     color: #333;
@@ -563,7 +567,7 @@ to {
     transition: all 0.3s;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     align-items: center;
-    margin-left: 10px;
+    margin: 20px 10px;
 }
 
 .footer-bottom{
@@ -609,7 +613,7 @@ to {
     .link-emoji {
         padding: 8px 12px;
         margin-left: 5px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
     
     .footer-bottom {
