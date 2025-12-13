@@ -253,6 +253,11 @@ to {
     padding: 70px 0;
 }
 
+.pokemon-link{
+    text-decoration: none;
+    color: inherit;
+}
+
 .pokemon-card{
     background-color: white;
     border-radius: 20px;

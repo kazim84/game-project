@@ -1,0 +1,87 @@
+/* ============================================
+   CSS VARIABLES - Rəng dəyişənləri
+   :root içində bütün rəngləri saxlayırıq
+   ============================================ */
+
+:root {
+    --pikachu-yellow: #FFD700;
+    --pikachu-orange: #FFA500;
+    --dark-text: #333;
+    --light-bg: #f5f5f5;
+}
+
+/* ============================================
+   ƏSAS STILLƏR
+   var() ilə dəyişənləri istifadə edirik
+   ============================================ */
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    font-family: 'Comic Sans MS', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+/* h1 {
+    color: var(--pikachu-yellow);
+    text-align: center;
+    padding: 20px;
+} */
+
+.sticky-header {
+    background: linear-gradient(90deg, #333, #555);
+    position: sticky;
+    top: 0;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header-title {
+    color: var(--pikachu-yellow);
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.electric-emoji {
+    font-size: 30px;
+}
+
+.link-home {
+    color: #FFA500;
+    background: var(--pikachu-yellow);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.link-home:hover {
+    transform: scale(1.1);
+}
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.profile-left {
+    background: linear-gradient(135deg, var(--pikachu-yellow), var(--pikachu-orange));
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.profile-right {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+}
