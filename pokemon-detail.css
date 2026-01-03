@@ -78,10 +78,208 @@ body {
     background: linear-gradient(135deg, var(--pikachu-yellow), var(--pikachu-orange));
     padding: 20px;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+}
+.profile-title{
+    align-self: center;
+    margin: 0;
+
+}
+
+.profile-image{
+    background-color: rgb(255, 230, 0);
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;  
+    margin: auto 0;  
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-name{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 8px 0 0;
+}
+
+.profile-type{
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #2f2f2f;
+    color: #ffd000;
+    width: fit-content;
+    height: auto;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pichachu-btn{
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+    border-radius: 20px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+    display: block;
+    font-weight: bold;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+}
+
+.pichachu-btn:hover{
+    transform: translateX(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6);
+}
+
+.profile-score{
+    background: #111;
+    padding: 10px 18px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+    font-weight: 700;
+}
+
+.profile-tag{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.score-display{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.score-lable{
+    color: #FFA500;
+    text-transform: capitalize;
+}
+
+.score-value{
+    color: #ff4b4b;
 }
 
 .profile-right {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 20px;
+}
+
+.profile-table{
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-start{
+    background-color: #FFA500;
+}
+
+.profile-abilities{
+    flex-direction: row;
+    background: #FFA500;
+    padding: 20px 20px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-pharagraf{
+    border-radius: 20px;
+    background-color: #d8d8d8;
+    padding: 10px 15px;
+    border-left: 6px solid #ffcc00;
+}
+
+.value{
+    color: #FFA500;
+}
+
+.game-message{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    min-height: 30px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.reset-btn{
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 20px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+    display: block;
+    font-weight: bold;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+}
+
+.reset-btn:hover{
+    transform: translateX(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6);
+}
+
+.btn-group{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pika-sound{
+    font-size: 24px;
+}
+
+.type-selector{
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.type-selector h3{
+    color: white;
+    background-color: chocolate;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 25px;
+}
+
+.type-selector select{
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    margin: 20px 0;
+    border: 2px solid var(--pikachu-yellow);
+    font-weight: bold;
 }
