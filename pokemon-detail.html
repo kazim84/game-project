@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pikachu - Pokemon Detail</title>
+    <link rel="stylesheet" href="pokemon-detail.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <span class="header-emoji">⚡</span>
+        <span class="header-title">Pikachu Profile</span>
+        <a href="index.html" class="back-btn">🏠 Ana Səhifə</a>
+    </header>
+    <div class="profile-container">
+        <div class="profile-left">
+            <div class="pokemon-image-container">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" class="pokemon-image">
+            </div>
+            <h1 class="pokemon-name">Pikachu</h1>
+            <span class="pokemon-type">⚡ Electric Type</span>
+            <p class="pokemon-id">#025</p>
+            
+            <!-- XAL SAYACI -->
+            <div class="score-display">
+                <span>⚡ Xal: </span>
+                <span id="score">0</span>
+            </div>
+            
+            <!-- MESAJ GÖSTƏRƏN YER -->
+            <p id="message" class="game-message"></p>
+            
+            <!-- PIKACHU SƏSİ -->
+            <p id="pikaSound" class="pika-sound"></p>
+            
+            <!-- POKEMON TİP SEÇİCİ -->
+            <div class="type-selector">
+                <h3>Pokemon Tipi Seç:</h3>
+                <select id="pokemonType" onchange="changePokemonType()">
+                    <option value="electric">⚡ Electric</option>
+                    <option value="fire">🔥 Fire</option>
+                    <option value="water">💧 Water</option>
+                    <option value="grass">🌿 Grass</option>
+                    <option value="psychic">🔮 Psychic</option>
+                </select>
+                <p id="typeMessage" class="type-message"></p>
+            </div>
+            
+            <!-- JAVASCRIPT BUTTONS -->
+            <div class="button-group">
+                <button class="pokemon-btn" onclick="incrementScore()">
+                    🎤 Pikachu-ya toxun!
+                </button>
+                <button class="reset-btn" onclick="resetGame()">
+                    🔄 Yenidən başla
+                </button>
+            </div>
+        </div>
+
+   
+    <script>
+      
+        let score = 0;
+        
+        // ARRAY (MASİV) - Pikachu səsləri siyahısı
+        let pikaSounds = [
+            "Pika Pika! ⚡",
+            "Pikaaa! 💛",
+            "Pika Pi! ⚡⚡",
+            "Chuuuu! 💫",
+            "Pika Pika Chuuu! ⚡💛",
+            "Pi Pi Pikachu! 🎵"
+        ];
+
+      
+        function incrementScore() {
+            score = score + 1; 
+            
+            document.getElementById("score").textContent = score;
+            
+            // RANDOM SƏS SEÇ
+            let randomIndex = Math.floor(Math.random() * pikaSounds.length);
+            document.getElementById("pikaSound").textContent = pikaSounds[randomIndex];
+            
+            // IF/ELSE - Şərtlər
+            if (score >= 100) {
+                // 100 və ya daha çox
+                document.getElementById("message").textContent = "🏆 USTASAN! Pikachu səni seçir!";
+                document.getElementById("message").style.color = "#333";
+                document.getElementById("message").style.background = "#FFD700";
+            } else if (score >= 50) {
+                // 50-99 arası
+                document.getElementById("message").textContent = "🔥 Əla gedirsən!";
+                document.getElementById("message").style.color = "white";
+                document.getElementById("message").style.background = "#ff6b6b";
+            } else if (score >= 10) {
+                // 10-49 arası
+                document.getElementById("message").textContent = "👍 Yaxşı başladın!";
+                document.getElementById("message").style.color = "white";
+                document.getElementById("message").style.background = "#4ECDC4";
+            }
+        }
+        
+        // RESET FUNKSİYASI
+        function resetGame() {
+            score = 0;
+            document.getElementById("score").textContent = score;
+            document.getElementById("message").textContent = "";
+            document.getElementById("message").style.background = "transparent";
+            document.getElementById("pikaSound").textContent = "";
+        }
+        
+        // ============================================
+        // SWITCH STATEMENT - Pokemon Tip Sistemi
+        // ============================================
+        
+        function changePokemonType() {
+            let selectedType = document.getElementById("pokemonType").value;
+            let message = "";
+            let color = "";
+            
+            // SWITCH - hər tip üçün fərqli mesaj
+            switch(selectedType) {
+                case "electric":
+                    message = "⚡ Electric növü! Sürətli və güclü!";
+                    color = "#FFD700";
+                    break;
+                case "fire":
+                    message = "🔥 Fire növü! Qızmar və əzəmətli!";
+                    color = "#ff6b6b";
+                    break;
+                case "water":
+                    message = "💧 Water növü! Sakitlik və güc!";
+                    color = "#4ECDC4";
+                    break;
+                case "grass":
+                    message = "🌿 Grass növü! Təbiətin gücü!";
+                    color = "#52c41a";
+                    break;
+                case "psychic":
+                    message = "🔮 Psychic növü! Ağıl və mistika!";
+                    color = "#b37feb";
+                    break;
+                default:
+                    message = "Naməlum tip!";
+                    color = "#999";
+            }
+            
+            document.getElementById("typeMessage").textContent = message;
+            document.getElementById("typeMessage").style.background = color;
+        }
+    </script>
+
+        <div class="profile-right">
+            <h2 class="section-title">📊 Statistikalar</h2>
+            
+            <!-- HTML TABLE -->
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Stat</th>
+                        <th>Dəyər</th>
+                        <th>Max</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>❤️ HP</td>
+                        <td class="stat-value">35</td>
+                        <td>255</td>
+                    </tr>
+                    <tr>
+                        <td>⚔️ Hücum</td>
+                        <td class="stat-value">55</td>
+                        <td>255</td>
+                    </tr>
+                    <tr>
+                        <td>🛡️ Müdafiə</td>
+                        <td class="stat-value">40</td>
+                        <td>255</td>
+                    </tr>
+                    <tr>
+                        <td>🌟 Xususi Hücum</td>
+                        <td class="stat-value">50</td>
+                        <td>255</td>
+                    </tr>
+                    <tr>
+                        <td>💨 Sürət</td>
+                        <td class="stat-value">90</td>
+                        <td>255</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title">🎯 Bacarıqlar</h2>
+            <div class="abilities-container">
+                <div class="ability-card">
+                    <span class="ability-icon">⚡</span>
+                    <span class="ability-name">Thunder Bolt</span>
+                </div>
+                <div class="ability-card">
+                    <span class="ability-icon">💨</span>
+                    <span class="ability-name">Quick Attack</span>
+                </div>
+                <div class="ability-card">
+                    <span class="ability-icon">🗿</span>
+                    <span class="ability-name">Iron Tail</span>
+                </div>
+            </div>
+
+            <h2 class="section-title">📖 Haqqında</h2>
+            <p class="about-text">
+                Pikachu elektrik tipli Pokemon-dur. Yanaqlarında elektrik saxlayır və təhlükə hiss etdikdə şimmək çıxarır. Meşələrdə qrupla yaşayır.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
